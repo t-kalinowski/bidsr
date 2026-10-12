@@ -1,6 +1,7 @@
 # bidsr (development version)
 
 * BIDS bracket methods now register correctly and the package installs with development S7.
+* Property factories now defer their list and data-frame defaults without S7 warnings.
 
 # bidsr 0.1.1
 

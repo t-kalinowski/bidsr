@@ -151,7 +151,7 @@ bids_property_named_list(
   getter = NULL,
   setter = NULL,
   validator = NULL,
-  default = list(),
+  default = quote(list()),
   ...,
   class = S7::class_list
 )
@@ -184,7 +184,7 @@ bids_property_tabular_column_descriptor_list(
   getter = NULL,
   setter = NULL,
   validator = NULL,
-  default = list(),
+  default = quote(list()),
   ...,
   class = S7::class_list
 )
@@ -194,7 +194,7 @@ bids_property_data_frame(
   getter = NULL,
   setter = NULL,
   validator = NULL,
-  default = data.frame(),
+  default = quote(data.frame()),
   ...,
   class = S7::class_data.frame
 )
