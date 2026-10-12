@@ -1,3 +1,7 @@
+# bidsr (development version)
+
+* BIDS bracket methods now register correctly and the package installs with development S7.
+
 # bidsr 0.1.1
 
 * Fixed `query_bids` with new argument `env` to capture the current parsing context

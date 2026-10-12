@@ -164,7 +164,7 @@ BIDSTabularColumnDescriptor <- new_bids_class(
   constructor = function(..., .list = list()) {
     props <- c(list(...), .list)
     object <- S7::new_object(
-      .parent = S7::S7_object(),
+      S7::S7_object(),
       LongName = character(0L),
       Description = character(0L),
       Levels = list(),
