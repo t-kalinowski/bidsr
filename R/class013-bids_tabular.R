@@ -398,6 +398,16 @@ new_bids_tabular_class <- function(
     methods <- NULL
   }
 
+  constructor <- function(content, meta = NULL) {
+    content <- data.table::as.data.table(content)
+    meta <- as_bids_tabular_meta(meta)
+    S7::new_object(
+      parent(content = content, meta = meta),
+      content = content,
+      meta = meta
+    )
+  }
+
   new_bids_class(
     name = class_name,
     parent = parent,
@@ -415,7 +425,7 @@ new_bids_tabular_class <- function(
       )
     ),
     methods = methods,
-    constructor = bids_tabular_constuctor
+    constructor = constructor
   )
 }
 
