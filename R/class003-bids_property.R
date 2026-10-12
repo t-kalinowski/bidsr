@@ -442,7 +442,7 @@ bids_property_list <- function(
 #' @rdname bids_property
 #' @export
 bids_property_named_list <- function(
-    name, getter = NULL, setter = NULL, validator = NULL, default = quote(list()),
+    name, getter = NULL, setter = NULL, validator = NULL, default = list(),
     ..., class = S7::class_list) {
 
   v <- union_validators(
@@ -581,7 +581,7 @@ bids_property_entity_list <- function(
 #' @rdname bids_property
 #' @export
 bids_property_tabular_column_descriptor_list <- function(
-    name, getter = NULL, setter = NULL, validator = NULL, default = quote(list()),
+    name, getter = NULL, setter = NULL, validator = NULL, default = list(),
     ..., class = S7::class_list) {
 
   setter_ <- function(self, value) {
