@@ -194,7 +194,7 @@ bids_property_data_frame(
   getter = NULL,
   setter = NULL,
   validator = NULL,
-  default = quote(data.frame()),
+  default = NULL,
   ...,
   class = S7::class_data.frame
 )

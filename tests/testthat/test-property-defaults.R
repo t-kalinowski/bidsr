@@ -23,6 +23,28 @@ test_that("public property factories defer empty defaults", {
   expect_identical(x@frame, data.frame())
 })
 
+test_that("data frame properties use class defaults and preserve explicit defaults", {
+  table_class <- S7::new_S3_class(
+    class = "data.table",
+    constructor = \(.data = 1L) data.table::data.table(value = .data)
+  )
+  properties <- list(
+    table = bids_property_data_frame(name = "table", class = table_class),
+    frame = bids_property_data_frame(
+      name = "frame",
+      default = quote(data.frame(value = 2L))
+    )
+  )
+  TestFrames <- do.call(
+    new_bids_class,
+    list(name = "TestFrames", properties = properties)
+  )
+  x <- TestFrames()
+  expect_s3_class(x@table, "data.table")
+  expect_identical(x@table$value, 1L)
+  expect_identical(x@frame, data.frame(value = 2L))
+})
+
 test_that("entity defaults preserve list conversion", {
   properties <- list(
     entities = expect_no_condition(bids_property_entity_list(

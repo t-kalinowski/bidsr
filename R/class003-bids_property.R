@@ -628,7 +628,7 @@ bids_property_tabular_column_descriptor_list <- function(
 #' @export
 bids_property_data_frame <- function(
     name, getter = NULL, setter = NULL, validator = NULL,
-    default = quote(data.frame()), ..., class = S7::class_data.frame) {
+    default = NULL, ..., class = S7::class_data.frame) {
 
   bids_property(
     name = name,
